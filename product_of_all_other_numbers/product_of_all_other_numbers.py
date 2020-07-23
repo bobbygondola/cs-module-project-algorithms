@@ -1,11 +1,20 @@
 '''
 Input: a List of integers
 Returns: a List of integers
+
+Write a function that receives an array of integers and returns an array 
+consisting of the product of all numbers in the array _except_ the number at that index. 
 '''
 def product_of_all_other_numbers(arr):
-    # Your code here
+    results = []
 
-    pass
+    for index, number in enumerate(arr):
+        product = 1
+        excluding_current = arr[:index] + arr[index + 1:]
+        for number in excluding_current:
+            product *= number
+        results.append(product)
+    return results
 
 
 if __name__ == '__main__':
